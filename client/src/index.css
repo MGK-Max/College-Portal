@@ -1,0 +1,411 @@
+:root {
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* =========================================================================
+     MULTI-SHADE RED & CRISP WHITE SYSTEM
+     Combines distinct types of red (Burgundy, Crimson, Ruby, Scarlet, Cherry,
+     Coral, Rose, Blush) paired with pure and frosted whites.
+     ========================================================================= */
+
+  /* 1. Burgundy & Maroon: Deep anchor reds for sidebars, dark cards & dark text */
+  --red-burgundy: #4c0519;       /* Deepest Burgundy / Wine Noir */
+  --red-maroon: #70091e;         /* Classic Maroon */
+  --red-wine: #881337;           /* Rich Merlot Wine */
+
+  /* 2. Crimson Red: Regal, authoritative primary brand red */
+  --red-crimson: #991b1b;        /* Crimson Red */
+  --red-crimson-bright: #b91c1c; /* Bright Crimson */
+
+  /* 3. Ruby Red: Jewel red for primary buttons, active tabs & glowing badges */
+  --red-ruby: #be123c;           /* Jewel Ruby */
+  --red-ruby-vivid: #e11d48;     /* Vivid Electric Ruby */
+
+  /* 4. Scarlet & Flame: High-energy vivid red for counters & live indicators */
+  --red-scarlet: #dc2626;        /* Vivid Scarlet */
+  --red-flame: #ef4444;          /* Flame Red Alert */
+
+  /* 5. Cherry Red: Saturated red for hover rings, interactive cards */
+  --red-cherry: #c41e3a;         /* Cardinal Cherry */
+  --red-cherry-glow: #ff2d55;    /* Glowing Cherry Accent */
+
+  /* 6. Coral & Salmon Red: Warm light reds for secondary accents & icons */
+  --red-coral: #f43f5e;          /* Coral Red */
+  --red-salmon: #fb7185;         /* Soft Watermelon Salmon */
+
+  /* 7. Rose & Pastel Red: Gentle borders and status pill backdrops */
+  --red-rose: #fda4af;           /* Rose Quartz */
+  --red-pastel: #fecdd3;         /* Pastel Rose Border */
+
+  /* 8. Blush & Mist: Ultra-soft red-tinted whites for subtle backgrounds */
+  --red-blush: #ffe4e6;          /* Soft Blush Tint */
+  --red-mist: #fff1f2;           /* Rose Mist Surface */
+  --red-frosted-bg: #fff5f6;     /* Frosted Tinted White */
+
+  /* =========================================================================
+     WHITE PALETTE (Crisp contrast pairings)
+     ========================================================================= */
+  --white-pure: #ffffff;                    /* Pure Crisp White */
+  --white-snow: #faf7f7;                    /* Snow White Background */
+  --white-soft: #fcf8f8;                    /* Soft White Surface */
+  --white-translucent: rgba(255, 255, 255, 0.88); /* Translucent White Glass */
+  --white-glass: rgba(255, 255, 255, 0.12);        /* Frosted White on Red */
+  --white-border-subtle: rgba(255, 255, 255, 0.22);/* Crisp White Border on Red */
+
+  /* Semantic UI Tokens */
+  --primary: var(--red-ruby-vivid);
+  --primary-hover: var(--red-wine);
+  --primary-light: var(--red-mist);
+  --primary-border: var(--red-pastel);
+  --primary-accent: var(--red-cherry-glow);
+
+  --secondary: var(--red-burgundy);
+  --secondary-light: var(--red-mist);
+
+  --success: #059669;
+  --success-bg: #ecfdf5;
+  --success-border: #a7f3d0;
+  --success-hover: #047857;
+
+  --danger: var(--red-scarlet);
+  --danger-bg: var(--red-mist);
+  --danger-border: var(--red-pastel);
+  --danger-hover: var(--red-crimson-bright);
+
+  --warning: #d97706;
+  --warning-bg: #fffbeb;
+  --warning-border: #fde68a;
+  --warning-hover: #b45309;
+
+  --info: #0284c7;
+  --info-bg: #f0f9ff;
+
+  --bg-main: var(--white-soft);
+  --card-bg: var(--white-pure);
+  --text-main: #380712;         /* Deep Wine Noir Typography (Extremely readable & rich) */
+  --text-muted: #801b2a;        /* Merlot Muted Text */
+  --text-subtle: #aa5060;       /* Dusty Rose Text */
+  --border: #f8d7dc;            /* Soft Rose Border */
+  --border-strong: #f3a8b4;     /* Coral Red Border */
+
+  --shadow-sm: 0 1px 3px 0 rgba(190, 18, 60, 0.05);
+  --shadow-md: 0 4px 10px -2px rgba(190, 18, 60, 0.08), 0 2px 4px -2px rgba(190, 18, 60, 0.05);
+  --shadow-lg: 0 10px 20px -3px rgba(136, 19, 55, 0.12), 0 4px 6px -4px rgba(136, 19, 55, 0.06);
+  --shadow-xl: 0 20px 28px -5px rgba(76, 5, 25, 0.18), 0 8px 10px -6px rgba(76, 5, 25, 0.1);
+  --shadow-red-glow: 0 0 20px rgba(225, 29, 72, 0.35);
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-full: 9999px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  transition: all 0.15s ease-in-out;
+}
+
+input, select, textarea {
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: var(--red-mist);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--red-pastel);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--red-salmon);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(225, 29, 72, 0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(225, 29, 72, 0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.25s ease-out forwards;
+}
+
+.pulse-red {
+  animation: pulseGlow 2s infinite;
+}
+
+/* App Layout Grid */
+.app-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 270px;
+  background: linear-gradient(180deg, #3d050f 0%, #200208 100%);
+  color: var(--white-pure);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  border-right: 1px solid #570a16;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  z-index: 40;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow-y: auto;
+}
+
+/* Topbar */
+.topbar {
+  background: #ffffff;
+  border-bottom: 1px solid var(--border);
+  padding: 0.75rem 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+}
+
+/* Dashboard Cards */
+.stat-card {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.stat-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Attendance Buttons Highlighting */
+.btn-status {
+  padding: 0.45rem 1rem;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+  border: 1.5px solid transparent;
+  transition: all 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.btn-status-present {
+  background: #f0fdf4;
+  color: #166534;
+  border-color: #bbf7d0;
+}
+.btn-status-present.active {
+  background: #16a34a !important;
+  color: #ffffff !important;
+  border-color: #15803d !important;
+  box-shadow: 0 2px 6px rgba(22, 163, 74, 0.4);
+}
+
+.btn-status-absent {
+  background: #fef2f2;
+  color: #991b1b;
+  border-color: #fecaca;
+}
+.btn-status-absent.active {
+  background: #dc2626 !important;
+  color: #ffffff !important;
+  border-color: #b91c1c !important;
+  box-shadow: 0 2px 6px rgba(220, 38, 38, 0.4);
+}
+
+.btn-status-od {
+  background: #fffbeb;
+  color: #92400e;
+  border-color: #fde68a;
+}
+.btn-status-od.active {
+  background: #d97706 !important;
+  color: #ffffff !important;
+  border-color: #b45309 !important;
+  box-shadow: 0 2px 6px rgba(217, 119, 6, 0.4);
+}
+
+/* Badge styles */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.65rem;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.badge-present {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.badge-absent {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.badge-od {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+.badge-pending {
+  background: #fff1f2;
+  color: #991b1b;
+}
+
+/* Tables */
+.custom-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.custom-table th {
+  background: var(--red-mist);
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.75rem 1rem;
+  border-bottom: 1.5px solid var(--border);
+  text-align: left;
+}
+
+.custom-table td {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.9rem;
+  color: var(--text-main);
+  vertical-align: middle;
+}
+
+.custom-table tr:hover td {
+  background-color: var(--red-blush);
+}
+
+/* Live Countdown Box */
+.timer-box {
+  background: linear-gradient(135deg, var(--red-burgundy) 0%, #200208 100%);
+  color: var(--white-pure);
+  border: 1px solid var(--red-wine);
+  border-radius: var(--radius-md);
+  padding: 0.75rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  box-shadow: 0 4px 14px rgba(190, 18, 60, 0.25);
+}
+
+.timer-digits {
+  font-family: var(--font-mono);
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #ff3355;
+  text-shadow: 0 0 10px rgba(255, 51, 85, 0.4);
+}
+
+/* Modal Dialog Backdrop */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(43, 4, 10, 0.75);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 1.5rem;
+}
+
+.modal-content {
+  background: var(--white-pure);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xl);
+  max-width: 650px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  animation: fadeIn 0.2s ease-out;
+}
+
+/* Progress bar */
+.progress-bar {
+  height: 8px;
+  border-radius: var(--radius-full);
+  background: var(--red-mist);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  border-radius: var(--radius-full);
+  background: linear-gradient(90deg, var(--red-ruby-vivid) 0%, var(--red-cherry-glow) 100%);
+  transition: width 0.4s ease;
+}
