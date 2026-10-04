@@ -30,3 +30,4 @@ Thumbs.db
 .vscode/*
 !.vscode/extensions.json
 .idea/
+upload_to_github.bat
